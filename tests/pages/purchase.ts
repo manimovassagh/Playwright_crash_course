@@ -25,6 +25,11 @@ export class Purchase {
     }
 
 
+    async backToHomePage(){
+        await this.page.locator('[data-test="back-to-products"]').click();
+    }
+
+
 
 
 

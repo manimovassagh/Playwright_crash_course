@@ -20,6 +20,11 @@ export class Login {
     await this.page.locator('[data-test="login-button"]').click();
   }
 
+
+  async performLogout(){
+    await this.page.getByRole('button', { name: 'Open Menu' }).click();
+    await this.page.getByRole('link', { name: 'Logout' }).click();
+  }
   
 
 
