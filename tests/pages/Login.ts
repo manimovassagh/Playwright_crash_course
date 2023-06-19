@@ -3,11 +3,11 @@ import { Page } from '@playwright/test';
 export class Login {
 
   readonly page: Page;
- 
+
 
   constructor(page: Page) {
     this.page = page;
- 
+
   }
 
   async gotoLoginPage() {
@@ -20,12 +20,17 @@ export class Login {
     await this.page.locator('[data-test="login-button"]').click();
   }
 
+  //all in one step
+  async goToLoginAndLog() {
+    this.gotoLoginPage()
+    this.fillCredentialAndLogin()
+  }
 
-  async performLogout(){
+  async performLogout() {
     await this.page.getByRole('button', { name: 'Open Menu' }).click();
     await this.page.getByRole('link', { name: 'Logout' }).click();
   }
-  
+
 
 
 }
