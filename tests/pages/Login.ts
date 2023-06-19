@@ -10,23 +10,23 @@ export class Login {
 
   }
 
-  async gotoLoginPage() {
+  async gotoLoginPage(): Promise<void> {
     await this.page.goto('https://saucedemo.com/');
   }
 
-  async fillCredentialAndLogin() {
+  async fillCredentialAndLogin(): Promise<void> {
     await this.page.locator('[data-test="username"]').fill("standard_user");
     await this.page.locator('[data-test="password"]').fill("secret_sauce");
     await this.page.locator('[data-test="login-button"]').click();
   }
 
   //all in one step
-  async goToLoginAndLog() {
+  async goToLoginAndLog(): Promise<void> {
     this.gotoLoginPage()
     this.fillCredentialAndLogin()
   }
 
-  async performLogout() {
+  async performLogout(): Promise<void> {
     await this.page.getByRole('button', { name: 'Open Menu' }).click();
     await this.page.getByRole('link', { name: 'Logout' }).click();
   }
