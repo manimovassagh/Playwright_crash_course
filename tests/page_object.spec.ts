@@ -8,7 +8,7 @@ test('login to saucedemo website and buy some articles from that', async ({ page
   const login = new Login(page);
   const purchase = new Purchase(page)
 
-
+  
   await login.gotoLoginPage()
   await login.fillCredentialAndLogin()
   await purchase.gotoPurachseAndBuy()
