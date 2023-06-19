@@ -3,6 +3,13 @@ import { test, expect } from '@playwright/test';
 
 
 test('login to saucedemo website and buy some articles from that', async ({ page }) => {
+
+
+  //if it is to fast you can see steps with following command
+  //await page.waitForTimeout(3000);
+
+
+
   //go to sauce demo page
   await page.goto('https://saucedemo.com/');
 
@@ -15,12 +22,16 @@ test('login to saucedemo website and buy some articles from that', async ({ page
   const standardPassword = "secret_sauce"
 
 
+
+
   //fillup username and password
   await page.locator('[data-test="username"]').fill(standardUserName);
   await page.locator('[data-test="password"]').fill(standardPassword);
   await page.locator('[data-test="login-button"]').click();
 
 
+
+  await expect(page).toHaveTitle("Swag Labs")
   await page.locator('#item_2_title_link').click();
   await page.locator('[data-test="add-to-cart-sauce-labs-onesie"]').click();
 
@@ -41,6 +52,7 @@ test('login to saucedemo website and buy some articles from that', async ({ page
   await page.locator('[data-test="lastName"]').fill('movassagh');
   await page.locator('[data-test="lastName"]').press('Tab');
   await page.locator('[data-test="postalCode"]').fill('55129');
+
 
 
   //finalize and go back to main page
