@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import { Login } from './pages/Login';
 import { Purchase } from './pages/purchase';
 import { LoginFunctional } from './functional/login/LoginFn';
@@ -17,5 +17,5 @@ test('login to saucedemo website and buy some articles from that', async ({ page
   await purchase.backToHomePage()
   await login.performLogout()
 
-  
+
 });
