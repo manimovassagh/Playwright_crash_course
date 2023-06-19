@@ -17,4 +17,5 @@ test('login to saucedemo website and buy some articles from that', async ({ page
   await purchase.backToHomePage()
   await login.performLogout()
 
+  
 });
