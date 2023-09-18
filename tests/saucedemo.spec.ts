@@ -18,9 +18,8 @@ test('login to saucedemo website and buy some articles from that', async ({ page
   await expect(page).toHaveURL("https://www.saucedemo.com/")
 
   //login as standard user
-  const standardUserName = "standard_user"
-  const standardPassword = "secret_sauce"
-
+  const standardUserName: string = "standard_user"
+  const standardPassword: string = "secret_sauce"
 
 
 
